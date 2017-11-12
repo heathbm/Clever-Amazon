@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#66b585">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="css/iThing.css" type="text/css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/jqueryui.js"></script>
+    <script src="js/jQRangeSlider-min.js"></script>
+</head>
+
+<body>
+
+    <div class="main center_vert">
+
+        <h1 class='deepshadow'>Clever Amazon</h1>
+
+        <form action="javascript:submit();" class="center_vert">
+
+            <div class="center_hoz">
+                <input type="text" id="keywords" placeholder="Looking for something specific? (Optional)" />
+            </div>
+
+            <div class="center_hoz input_supercontainer">
+                <div class="left_input">
+                    <div class="input_header">
+                        <p>Department</p>
+                    </div>
+                    <div class="input_header_bridge"></div>
+                    <select id="department">
+                        <option value="null">All Departments</option>
+                        <option value="560798">Electronics - TVs, Sat Navs, Phones</option>
+                        <option value="10745681">Furniture - Beds, Sofas, Tables</option>
+                        <option value="11052671">Garden &#38; Outdoors - BBQs, Plants, Decor</option>
+                        <option value="11052681">Kitchen &#38; Home - Fridges, Washers, Cookware</option>
+                        <option value="59624031">Baby - Clothing, Car Seats, Pushchairs</option>
+                        <option value="65801031">Health and Beauty - Make-up, Appliances</option>
+                        <option value="79903031">DIY - Bathrooms, Flooring, Paint, Power Tools</option>
+                        <option value="83450031">Clothing - Dresses, Suits, Nightwear</option>
+                        <option value="192413031">Office - Office Supplies</option>
+                        <option value="193716031">Jewellery - Bracelets, Rings</option>
+                        <option value="248877031">Car and Motorbike - Parts, Oil, Tyres</option>
+                        <option value="318949011">Sports &#38; Leisure - Cricket, Cycling, Running</option>
+                        <option value="328228011">Watches - Wristwatches, Accessories</option>
+                        <option value="340837031">Musical Instruments - Guitars, DJ equipment</option>
+                        <option value="340840031">Pets - Cats, Dogs, Horses</option>
+                        <option value="355005011">Shoes, Bags &#38; Accessories - Bags, Belts, Luggage</option>
+                        <option value="595312">Toys &#38; games - Dolls, Bikes, Crafts</option>
+                        <option value="676193011">Video Games - Xbox, Wii</option>
+                        <option value="229816">Music - CDs</option>
+                        <option value="266239">Books - Art, History, Fiction</option>
+                    </select>
+                </div>
+                <div class="right_input">
+                    <div class="input_header">
+                        <p>Sub-Department</p>
+                    </div>
+                    <div class="input_header_bridge"></div>
+                    <select id="sub_category"></select>
+                </div>
+            </div>
+
+            <div id="slider_container" class="center_vert">
+                <div id="slider"></div>
+                <div id="silder_footer">
+                    <p>Discount Percentage</p>
+                </div>
+            </div>
+
+            <div class="center_hoz input_supercontainer">
+                <div class="left_input">
+                    <div class="input_header">
+                        <p>Min Price</p>
+                    </div>
+                    <div class="input_header_bridge"></div>
+                    <select id="min_price_select">
+                        <option value="none">None</option>
+                        <option value="1">&pound;1.00</option>
+                        <option value="2">&pound;2.00</option>
+                        <option value="5">&pound;5.00</option>
+                        <option value="10">&pound;10.00</option>
+                        <option value="20">&pound;20.00</option>
+                        <option value="50">&pound;50.00</option>
+                        <option value="100">&pound;100.00</option>
+                        <option value="200">&pound;200.00</option>
+                        <option value="500">&pound;500.00</option>                                
+                        <option value="0">Any</option>
+                    </select>
+                </div>
+
+                <div class="right_input">
+                    <div class="input_header">
+                        <p>Max Price</p>
+                    </div>
+                    <div class="input_header_bridge"></div>
+                    <select id="max_price_select">
+                        <option value="none">None</option>
+                        <option value="1">&pound;1.00</option>
+                        <option value="2">&pound;2.00</option>
+                        <option value="5">&pound;5.00</option>
+                        <option value="10">&pound;10.00</option>
+                        <option value="20">&pound;20.00</option>
+                        <option value="50">&pound;50.00</option>
+                        <option value="100">&pound;100.00</option>
+                        <option value="200">&pound;200.00</option>
+                        <option value="500">&pound;500.00</option>
+                        <option value="0">Any</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="center_hoz input_supercontainer">
+                <div class="left_input">
+                    <div class="input_header">
+                        <p>Sort By</p>
+                    </div>
+                    <div class="input_header_bridge"></div>
+                    <select id="sort_by">
+                        <option value="review-count-rank">Number of reviews</option>
+                        <option value="review-count-rank">Relevance</option>
+                        <option value="featured-rank">Featured</option>
+                        <option value="price-asc-rank">Price: Low to High</option>
+                        <option value="price-desc-rank">Price: High to Low</option>
+                        <option value="smooth-review-rank">Reviews</option>
+                        <option value="date-desc-rank">Newest</option>
+                    </select>
+                </div>
+
+                <div class="right_input">
+                    <div class="input_header">
+                        <p>Minimum Rating</p>
+                    </div>
+                    <div class="input_header_bridge"></div>
+                    <ul class="rate-area">
+                        <input type="radio" id="5-star" name="rating" value="5" /><label for="5-star" title="Amazing" id="star_anchor">★</label>
+                        <input type="radio" id="4-star" name="rating" value="4" /><label for="4-star" title="Good">★</label>
+                        <input type="radio" id="3-star" name="rating" value="3" /><label for="3-star" title="Average">★</label>
+                        <input type="radio" id="2-star" name="rating" value="2" /><label for="2-star" title="Not Good">★</label>
+                        <input type="radio" id="1-star" name="rating" value="1" /><label for="1-star" title="Bad">★</label>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="center_hoz input_supercontainer" id="switch_supercontainer">
+                <div class="left_input">
+                    <div class="center_hoz">
+                        <div class="switch_container" id="left_switch_container">
+                            <p>Prime Delivery</p>
+                        </div>
+                        <div class="bridge"></div>
+                        <label class="switch">
+                        <input type="checkbox" id="free_delivery">
+                        <div class="slider"></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="right_input">
+                    <div class="center_hoz">
+                        <div class="switch_container" id="right_switch_container">
+                            <p>Free Delivery</p>
+                        </div>
+                        <div class="bridge"></div>
+                        <label class="switch" id="right_switch">
+                        <input type="checkbox" id="prime_delivery">
+                        <div class="slider"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" value="Submit">Go!</button>
+
+        </form>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
